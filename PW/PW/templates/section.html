@@ -1,0 +1,79 @@
+{%extends "base.html"%}
+{%block content%}
+
+{% load staticfiles %}
+
+
+<section class="nav1 cat" >
+	<ul>
+				<li><a> Secciones </a></li>
+				<li><a href="{% url 'section' %}?g=Rock">Rock</a></li>
+				<li><a href="{% url 'section' %}?g=Punk">Punk</a></li>
+				<li><a href="{% url 'section' %}?g=Metal">Metal</a></li>
+				<li><a href="{% url 'section' %}?g=Acustic">Acustic</a></li>
+			</ul>
+</section>
+<section class="margen3">
+	<section class="nav2 nav1" >
+		<section class="logo_rock"> <img src="{% static 'img/icono.jpg' %}" width="110px" height="125px"> </section>
+		<section class="tit_rock">
+			<p class="efect">Section{{infod.0.Genero}}</p>
+		</section>
+		<section class="logo_rock_der logo_rock"> <img src="{% static 'img/icono.jpg' %}" width="110px" height="125px"> </section>
+	</section>
+</section>
+
+<section class="central">
+<!-- Disco principal de la pagina secciones  -->
+	<section class="central_1">
+	
+		<a href="{% url 'discos'%}?d={{infod.0.Titulo}} ">
+			<section class="sub_cent">
+				<img src="{{infod.0.Imagen}}">
+			</section>
+		</a>	
+			<section class="centro1">
+				<p class="efects" style="font-size:35px;">{{infod.0.Autor}}</p><p class="efects" style="font-size:35px;">{{infod.0.Titulo}}</p>
+			</section>
+	
+	</section>
+	<!-- Discos de abajo.4-->
+
+		
+	{% for g in infod reversed %}
+
+		
+		<section class="intimo"> 
+			<a href="{% url 'discos' %}?d={{g.Titulo}}"> 
+				<img src="{{g.Imagen}}" width="360px"; 
+	 			height="280px";>
+			</a>
+		</section>
+	
+		
+	{%endfor%}
+
+		
+
+	
+</section>
+
+<article class="lateral">
+		<section class="art1_1_index">
+				<p>Más vendidos</p>
+		</section>
+	{% if listadisc|length <= 10 %}
+		{% for x in listadisc reversed %}
+		<section class="art1_2_index">
+			<a href="{% url 'discos'%}?d={{x.Titulo}}"><section class="log_disc"><img src="{{x.Imagen}}" width="110px" height="120px"></section></a>
+			<section class="art1_3 tam_tit arreglo grande">		{{x.Autor}}
+				<br>
+				<br>
+				{{x.Titulo}}
+			</section>
+		</section>
+		{%endfor%}
+	{%endif%}
+</article>
+
+{%endblock%}

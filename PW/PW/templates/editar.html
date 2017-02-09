@@ -1,0 +1,49 @@
+{%extends "base.html"%}
+{%block content%}
+
+{% load staticfiles %}
+
+
+
+<section class="formato" style="margin-top:30px;">
+		<form id="" class="form-container" role=form action="{% url 'editar' %}" method="POST">	{% csrf_token %}
+			<section class="registrate"><p class="efects" style="font-size:80px;margin-left:30px; ">Actualiza tu perfil :D</p></section>
+			<section>
+				<input type="text" name="Nombre" class="form-field" placeholder="Nombre" value={{ info.0 }}>
+			</section>
+			<section>
+				<input type="text" name="Apellidos" class="form-field" placeholder="Apellidos" value={{ info.1 }}>
+			</section>
+			<section >
+				<input type="password" name="Password" class="form-field" placeholder="Password" value={{ info.3 }}>
+			</section>
+			<section >
+				<input type="text" name="Direccion" class="form-field" placeholder="Direccion" value={{ info.4 }}>
+			</section>
+			<section >
+				<input type="text" name="CodigoPostal" class="form-field" placeholder="CodigoPostal" value={{ info.5 }}>
+			</section>
+			<section >
+				<input type="text" name="Provincia" class="form-field" placeholder="Provincia" value={{ info.6 }}>
+			</section>
+			<section >
+				<input type="email" name="Email" class="form-field" placeholder="Email" value={{ info.7 }}>
+			</section>
+			<section >
+				<input type="text" name="Dni" class="form-field" placeholder="Dni" value={{ info.8 }}>
+			</section>
+			<section >
+				<input type="text" name="Visa" class="form-field" placeholder="Visa" value={{ info.9 }}>
+			</section>
+			<section >
+				<textarea type="text" name="Observaciones" class="form-field" placeholder="Observaciones">{{ info.10 }}</textarea>
+			</section>
+			<section class="submit-container">
+				<input class="submit-button" type="submit" value="Update" />
+			</section>
+			
+		</form>	
+
+</section>
+
+{%endblock%}

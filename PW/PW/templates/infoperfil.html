@@ -1,0 +1,41 @@
+{%extends "base.html"%}
+{%block content%}
+
+{% load staticfiles %}
+
+<section style="margin-top:200px"; class="form-container estilo1">
+	
+	<section class="estilo1">
+
+	<section class="color1"><h1 class="movimiento">Nombre: {{info.0}}</h1></section>
+	<section class="color1"><h1 class="movimiento">Apellidos: {{info.1}}</h1></section>
+	<section class="color1"><h1 class="movimiento">Usuario: {{info.2}}</h1></section>
+	<section class="color1"><h1 class="movimiento">Password: {{info.3}}</h1></section>
+	<section class="color1"><h1 class="movimiento">Direccion: {{info.4}}</h1></section>
+	<section class="color1"><h1 class="movimiento">CodigoPostal: {{info.5}}</h1></section>
+	<section class="color1"><h1 class="movimiento">Provincia: {{info.6}}</h1></section>
+	<section class="color1"><h1 class="movimiento">Email: {{info.7}}</h1></section>
+	<section class="color1"><h1 class="movimiento">Dni: {{info.8}}</h1></section>
+	<section class="color1"><h1 class="movimiento">Visa: {{info.9}}</h1></section>
+	<section class="color1"><h1 class="movimiento">Observaciones: {{info.10}}</h1></section>
+
+	</section>
+
+	<section class="color1">
+		
+		<h1 class="movimiento">Si quieres realizar cambios de informacion en tu perfil</h1>
+		<h1 class="movimiento">Haz click aqui</h1>
+
+		<section class="submit-container">
+				<a href="{% url 'editar' %}"><button class="submit-button" >
+					Editar
+				</button></a>
+		</section>
+	</section>
+
+</section>
+
+
+
+
+{%endblock%}

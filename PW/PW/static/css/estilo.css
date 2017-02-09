@@ -1,0 +1,247 @@
+h1{
+	font-style: italic;
+}
+p{
+	font-style: italic;
+}
+#firestorm{
+	word-break: break-all;
+	float:left;
+	background-color: black;
+	height:100px;
+	width: 700px;
+}
+#firestorm a{color:black;}
+
+.cabecera{
+	margin-bottom:30px;
+}
+
+
+
+#prueba{
+
+	word-break: break-all;
+	font-style: italic;
+	font-size: 100px;
+	float:left;
+	margin-left:100px;
+	margin-top: 0px;
+	background-color: rgb(0, 0, 0);
+	text-shadow: rgb(255, 255, 255) 0px -1px 4px, rgb(255, 255, 0) 0px -2px 10px, rgb(255, 128, 0) 0px -10px 20px, rgb(255, 0, 0) 0px -18px 40px;
+
+}
+
+.log{
+	word-break: break-all;
+	float:left;
+	width:370px;
+	height:150px;
+}
+
+#logo{
+	float:left;
+	height: 82px;
+	width: 14px;
+	background-color: purple;
+	margin-left: 1px;
+	margin-top: 1px;
+
+}
+
+
+#c1{
+	float:left;
+	width:29%; 
+	height:250px;
+	background-color: white;
+	clear:none;
+	margin-top:10px;
+}
+
+.publicidad{
+	/*clear:none;*/
+	float:right;
+	background-color:yellow;
+	height:1400px;
+	width:190px;
+}
+
+.section1{
+	float:left;
+	width:350px; 
+	height:305px;
+	margin-top:25px;
+}
+.dif{
+	margin-left:5px;
+}
+
+.imagen2{
+	background-image: url("fondos/disco2.jpg");
+	background-size:100% 100%;
+}
+.imagen3{
+	background-image: url("fondos/disco3.jpg");
+	background-size:100% 100%
+}
+
+
+
+
+
+/*Cuadro central index*/
+.section_central{
+	float:left;
+	width: 370px;
+	height: 250px;
+	background-color: white;
+	margin-top:10px;
+}
+
+/*Slider borrar al hacerlo*/
+#section4_2{
+	float:left;
+	margin:3px;
+	width: 360px;
+	height: 240px;
+	overflow: hidden;
+
+}
+#section4_2 img{
+	float:left;
+	position:absolute;
+	width: 360px;
+	height: 240px;
+}
+#section4_2 img:ntch_child(1){
+	display:block;
+}
+
+/***************************/
+
+
+.secmax_index{
+	float:left;
+	width:750px;
+	height: 260px;
+	background-color: white;
+	margin-top: 25px;
+}
+
+.section_index_bajo{
+	float:left;
+	height:140px;
+	width:200px;
+	background-color: #C0C0C0;
+	margin-left: 40px;
+}
+
+.imagen_index_bajo{
+	float:left;
+	width:80px;
+	height:100px;
+	margin:12px 5px 0 5px;
+	background-color:blue; 
+}
+
+.datos{
+	float:left;
+	width: 108px;
+	height: 40px;
+	margin-top:12px;
+	background-color: #C0C0C0;
+}
+
+
+#secmax1{
+	float:left;
+	width:750px;
+	height: 50px;
+	background-color: #eeeeee;
+	
+}
+
+#cont1{
+	width:20%;
+	height:90px;
+	background-color: red;
+	margin-top: 17%;
+
+
+}
+
+#cat3{
+	margin-top:10%;
+	background-color: white;
+}
+
+#cat3 ul{
+   list-style-type: none;
+   text-align: center;
+}
+
+#cat3 li{
+   display: inline;
+   text-align: center;
+   margin: 0 50px 0 0;
+}
+
+#cat3 li a {
+   padding: 4px 14px 4px 14px;
+   color: #666;
+   background-color: #eeeeee;
+   border: 1px solid #ccc;
+   text-decoration: none;
+}
+
+#cat3 li a:hover{
+   background-color: #333333;
+   color: #ffffff;
+}
+
+
+body{
+	background-color: black;
+	margin:42px;
+
+}
+
+#piedepagina{
+	word-break: break-all;
+	clear:both;
+	float:left;
+	background-image: url("fondos/pie.jpg");
+	margin-top:5px;
+	margin-bottom:10px;
+	height: 160px;
+	width: 1268px;
+}
+
+#piedepagina h3{
+	margin-left:40px;
+	color:white;
+	text-shadow: 0px 2px 3px #555;
+}
+
+#piedepagina h4{
+	margin-bottom: 10px;
+	color:white;
+	margin-left:40px;
+	text-shadow: 0px 2px 3px #555;
+}
+
+#piedepagina a:link{
+	color:white;
+	margin-left:20px;
+	text-shadow: 0px 2px 3px #555;
+}
+
+.orden{
+	float:left;
+	margin:10px;
+}
+
+.clearfloat{
+	clear:both;
+}

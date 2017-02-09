@@ -1,0 +1,44 @@
+#cat{
+	float:left;
+	background-image:url("fondos/seccion1.jpg");
+	height:54px;
+	width: 750px; 
+	margin-top: 10px;
+	clear:none;
+}
+
+#cat ul{
+   list-style-type: none;
+   text-align: center;
+}
+
+#cat li{
+   display: inline;
+   text-align: center;
+   margin: 0 10px 0 0;
+}
+
+#cat li a {
+   padding: 2px 7px 2px 7px;
+   color: #666;
+   background-color: #eeeeee;
+   border: 1px solid #ccc;
+   text-decoration: none;
+}
+
+
+
+#cat li a:hover{
+   background-color: #333333;
+   color: #ffffff;
+}
+
+#cat2{
+	font-style:italic;
+	float:left;
+	background-image:url("fondos/seccion2.jpg");
+	height:50px;
+	width: 310px;
+	margin-top: 10px;
+	margin-left:5px;
+}

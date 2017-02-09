@@ -1,0 +1,76 @@
+{%extends "base.html"%}
+{%block content%}
+
+{% load staticfiles %}
+
+<section class="formato">
+		<form id="" class="form-container" role=form action="{% url 'registro' %}" method="POST">	{% csrf_token %}
+			<section class="registrate"><p class="efects" style="font-size:80px;margin-left:30px; ">Registrate :D</p></section>
+			<section>
+				{{form_reg.Nombre}}
+					{% if form_reg.Nombre.errors %}
+						{{form_reg.Nombre.errors}}
+					{%endif%}
+			</section>
+			<section >
+				{{form_reg.Apellidos}}
+				{% if form_reg.Apellidos.errors %}
+						{{form_reg.Apellidos.errors}}
+				{%endif%}
+			</section>
+				{{form_reg.User}}
+			<section >
+				{{form_reg.Password}}
+				{% if form_reg.Password.errors %}
+						{{form_reg.Password.errors}}
+				{%endif%}
+			</section>
+			<section >
+				{{form_reg.Direccion}}
+				{% if form_reg.Direccion.errors %}
+						{{form_reg.Direccion.errors}}
+				{%endif%}
+			</section>
+			<section >
+				{{form_reg.CodigoPostal}}
+				{% if form_reg.CodigoPostal.errors %}
+					{{form_reg.CodigoPostal.errors}}
+				{%endif%}
+			</section>
+			<section >
+				{{form_reg.Provincia}}
+				{% if form_reg.Provincia.errors %}
+					{{form_reg.Provincia.errors}}
+				{%endif%}
+			</section>
+			<section >
+				{{form_reg.Email}}
+				{% if form_reg.Email.errors %}
+					{{form_reg.Email.errors}}
+				{%endif%}
+			</section>
+			<section >
+				{{form_reg.Dni}}
+				{% if form_reg.Dni.errors %}
+						{{form_reg.Dni.errors}}
+					{%endif%}
+			</section>
+			<section >
+				{{form_reg.Visa}}
+					{% if form_reg.Visa.errors %}
+						{{form_reg.Visa.errors}}
+					{%endif%}
+			</section>
+			<section >
+				{{form_reg.Observaciones}}
+			</section>
+			<section class="submit-container">
+				<input class="submit-button" type="submit" value="Enter" />
+			</section>
+			
+		</form>	
+		
+</section>
+
+
+{%endblock%}

@@ -1,0 +1,95 @@
+{% load staticfiles %}
+<html lang="es">
+	<head>
+ 		<meta charset="utf­-8">
+ 		<title>Tienda Musica</title>
+ 		<link href="{% static 'css/estilo.css' %}" rel="stylesheet">
+ 		<link href="{%static 'css/form_log.css'%} " rel="stylesheet">
+ 		<link href="{%static 'css/menu1.css' %}" rel="stylesheet">
+ 		<link href="{%static 'css/articulo.css'%}" rel="stylesheet">
+ 		<link href="{%static 'css/sections.css'%}" rel="stylesheet">
+ 		<link href="{%static 'css/discor.css'%}" rel="stylesheet">
+ 		<link href="{%static 'css/registro.css'%}" rel="stylesheet">
+ 		<link href="{%static 'css/registro.css'%}" rel="stylesheet">
+ 		<link href="{%static 'css/indexbajo.css'%}" rel="stylesheet">
+
+ 		<!-- Bootstrap  -->
+
+ 		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+	</head>
+
+	<body>
+
+		<aside class="publicidad">
+				<img src="{% static 'img/publ.jpg' %}" width="100%" height="100%">			
+		</aside>
+
+		<header class="cabecera">
+			
+			<section id="firestorm">
+				<a href="{% url 'index' %}"><h1 id="prueba" > FireStorm </h1></a>		
+			</section>
+			
+			{% if 'username' in request.session %}
+			
+			<section class="log">
+				<h2 class="" style="font-size:25px;color:white; word-break: break-all;"> Bienvenido {{request.session.username}}</h2>
+				<a href="{%url 'mostrarperfil'%}?a={{request.session.username}}"> Perfil </a>
+				<a href="{% url 'logout' %}">Logout</a>
+				{% if 'username' in request.session and request.session.username == 'admin' %}
+				<a href="{% url 'settings' %}">Settings</a>
+				{%endif%}
+			</section>
+			
+			{%else%}
+
+			<section class="log">
+				<form method="POST" action="{% url 'login' %}" class="login">{% csrf_token %}
+				{{form_log.user}}
+				{{form_log.password}}
+					<br>
+					<input id="Sign" type="submit" value="Sign In" href='/login'>
+					<a id="recov" href="{% url 'registro' %}"> REGISTRATE </a>
+				</form>	
+			</section>
+			{%endif%}
+		</header>
+		{% block content %}
+		
+		{% endblock %}
+
+		<footer id="piedepagina">
+			<h3>Tienda de musica Firestorm </h1>
+			<h4>Alejandro José Reyes Portellano</h2>
+			<a href="/static/Documentacion.pdf"><h4>Como se hizo</h4></a>
+			
+		</footer>
+
+		<script>
+		       $(function() {
+		        var moveLeft = 20;
+		        var moveDown = 10;
+
+		        $('img#trigger').hover(function(e) {
+		          $('div#pop-up').show();
+		     
+		        }, function() {
+		          $('div#pop-up').hide();
+		        });
+
+		        $('img#trigger').mousemove(function(e) {
+		          $("div#pop-up").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+		        });
+
+		      });
+    	</script>
+
+
+
+
+
+	</body>
+</html>

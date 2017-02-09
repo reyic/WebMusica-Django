@@ -1,0 +1,44 @@
+.login {
+	float:left;
+	width:370px;
+	height:150px;
+	background-color:black;
+}
+.logpi{
+	float:left;
+	font-size:20px;
+	color:white;
+}
+#recov{
+	float:left;
+	margin:5px;
+}
+
+.log1{
+	color: #2E3133;
+	float:left;
+	margin:4%;
+	border-radius:25%;
+	border: 1px solid #DBE1EB;
+  	font-size: 14px;
+	font-family: Arial, Verdana;
+	padding-left: 2px;
+	padding-right:2px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	border-radius: 4px;
+    -moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-o-border-radius: 4px;
+	background: #FFFFFF;
+	background: linear-gradient(left, #FFFFFF, #F7F9FA);
+	background: -moz-linear-gradient(left, #FFFFFF, #F7F9FA);
+	background: -webkit-linear-gradient(left, #FFFFFF, #F7F9FA);
+	background: -o-linear-gradient(left, 
+}
+
+#Sign{
+	float:left;
+	margin:3px;
+	background: #EEEEEE;
+}

@@ -1,0 +1,33 @@
+{%extends "base.html"%}
+{%block content%}
+
+{% load staticfiles %}
+
+	<section class="formato" style="margin-top:30px;">
+		<form id="" class="form-container" role=form action="{% url 'registra_comentario' %}" method="POST">	{% csrf_token %}
+			<section class="registrate"><p class="efects" style="font-size:80px;margin-left:30px; ">Comenta tu disco!</p></section>
+			<section>
+				<input type="text" name="user" class="form-field" placeholder="{{request.session.username}}" value={{ request.session.username }}>
+			</section>
+
+			<section>
+				<input type="text" name="fecha" class="form-field" placeholder="Fecha" value={{fecha}}>
+			</section>
+			
+			<section>
+				<input type="text" name="disco" class="form-field" placeholder="Disco" value="{{y.0.Titulo}}">
+			</section>
+
+			<section>
+				<textarea rows="4" cols="50" type="text" name="comentario" class="form-field" placeholder="Comentario" value=""></textarea>
+			</section>				
+
+			<section class="submit-container">
+				<input class="submit-button" type="submit" value="Comenta" />
+			</section>
+	
+		</form>	
+
+</section>
+
+{%endblock%}

@@ -1,0 +1,202 @@
+{%extends "base.html"%}
+{%block content%}
+
+
+		<a href="{% url 'discos'%}?d={{index.4.Titulo}}">
+			<section id="" class="section1 imagen1"> 
+				<img id="trigger" src="{{index.4.Imagen}}" width="350px" height="305px">
+			</section>
+		</a>
+		
+
+		<a href="{% url 'discos'%}?d={{index.1.Titulo}}"><section class="section1 dif">
+			<img src="{{index.1.Imagen}}" width="350px" height="305px">
+		</section></a>
+	
+
+		<a href="{% url 'discos'%}?d={{index.5.Titulo}}">
+			<section class="section1 dif">
+				<img src="{{index.5.Imagen}}" width="350px" height="305px">
+			</section>
+		</a>
+
+		<section id="cat">
+			<ul>
+				<li><a> Secciones </a></li>
+				<li><a href="{% url 'section' %}?g=Rock">Rock</a></li>
+				<li><a href="{% url 'section' %}?g=Punk">Punk</a></li>
+				<li><a href="{% url 'section' %}?g=Metal">Metal</a></li>
+				<li><a href="{% url 'section' %}?g=Acustic">Acustic</a></li>
+			</ul>
+		</section>
+
+		<section id="cat2">
+			<h1 id="seccion_m1">Novedades</h1>
+		</section>
+		
+		<article class="art1_index">
+
+			<section class="art1_1_index">
+				<p  class="tam_tit" id="seccion_m1" style="margin-left: 30px;margin-bottom:15px;">Estrenos</p>
+			</section>
+		  {% for li in index reversed %}
+				
+					<section class="art1_2_index">
+						<a href="{% url 'discos'%}?d={{li.Titulo}}"><section class="log_disc"><img src="{{li.Imagen}}" width="100%" height="100%"> 
+						</a>
+						</section>
+						<section class="art1_3">
+						<p style="margin-top:40px;" class="tam_tit">{{li.Titulo}}</p>
+						</section>
+				
+					</section>
+			
+			{%endfor%}
+		</article>
+		
+		<section style="left">
+			
+			<a href="{% url 'discos'%}?d={{index.3.Titulo}}"><section class="section_central">
+				<img src="{{index.3.Imagen}}" width="100%" height="100%" alt="disco mas comentado">
+			</section></a>
+
+			<a href="{% url 'discos'%}?d={{index.8.Titulo}}"><section class="section_central">
+				<img src="{{index.8.Imagen}}" width="100%" height="100%" alt="disco mas comentado">
+			</section></a>
+
+
+			<a href="{% url 'discos'%}?d={{index.6.Titulo}}"><section class="section_central">
+				<img src="{{index.6.Imagen}}" width="100%" height="100%" alt="disco mas comentado">
+			</section></a>
+
+			<a href="{% url 'discos'%}?d={{index.0.Titulo}}"><section class="section_central">
+				<img src="{{index.0.Imagen}}" width="100%" height="100%" alt="disco mas comentado">
+			</section></a>
+		
+		<!--Ultimos discos -->
+
+			<section class="secmax_index">
+				
+				<section id="secmax1">
+					<p class="tam_tit mov">Ultimos discos</p>
+				</section>
+				
+				<ul class = "nav nav-tabs">
+  					  <li class="active">
+  					  	<a style="color:black;" data-toggle="tab" href="#rock">Rock</a>
+  					  </li>
+   	   				 <li>
+   	   				 	<a style="color:black;" data-toggle="tab" href="#metal">Metal
+   	   				 	</a>
+   	   				 </li>
+   	   				 <li>
+   	   				 	<a style="color:black; "data-toggle="tab" href="#punk">Punk
+   	   				 	</a>
+   	   				 </li>
+   	   				 <li>
+   	   				 	<a style="color:black;" data-toggle="tab" href="#acustic">Acustic
+   	   				 	</a>
+   	   				 </li>
+  				</ul>
+  				
+  				<section class="tab-content">
+    				<section id="rock" class="tab-pane fade in active">
+    						<section>
+								<section class="section_index_bajo">
+									<section class="imagen_index_bajo">
+										<img src="{{index.0.Imagen}}" width="100%" height="100%">
+									</section>
+									<section class="datos"><p class="tam_tit">{{index.0.Titulo}}</p></section>
+								</section>
+
+								<section class="section_index_bajo">
+									<section class="imagen_index_bajo">
+										<img src="{{index.1.Imagen}}" width="100%" height="100%">
+									</section>
+									<section class="datos"><p class="tam_tit">{{index.1.Titulo}}</p></section>
+								</section>
+									
+								<section class="section_index_bajo">
+									<section class="imagen_index_bajo">
+										<img src="{{index.2.Imagen}}" width="100%" height="100%">
+									</section>
+									<section class="datos"><p class="tam_tit">{{index.2.Titulo}}</p></section>
+								</section>
+							</section>
+					</section>
+					<section id="metal" class="tab-pane fade ">
+							<section>
+								<section class="section_index_bajo">
+									<section class="imagen_index_bajo">
+										<img src="{{index.3.Imagen}}" width="100%" height="100%">
+									</section>
+									<section class="datos"><p class="tam_tit">{{index.3.Titulo}}</p></section>
+								</section>
+								<section class="section_index_bajo">
+									<section class="imagen_index_bajo">
+										<img src="{{index.4.Imagen}}" width="100%" height="100%">
+									</section>
+									<section class="datos"><p class="tam_tit">{{index.4.Titulo}}</p></section>
+								</section>
+								<section class="section_index_bajo">
+									<section class="imagen_index_bajo">
+										<img src="{{index.5.Imagen}}" width="100%" height="100%">
+									</section>
+									<section class="datos"><p class="tam_tit">{{index.5.Titulo}}</p></section>
+								</section>
+							</section>
+					</section>
+					<section id="punk" class="tab-pane fade ">
+							<section>
+								<section class="section_index_bajo">
+									<section class="imagen_index_bajo">
+										<img src="{{index.6.Imagen}}" width="100%" height="100%">
+									</section>
+									<section class="datos"><p class="tam_tit">{{index.6.Titulo}}</p></section>
+								</section>
+								<section class="section_index_bajo">
+									<section class="imagen_index_bajo">
+										<img src="{{index.7.Imagen}}" width="100%" height="100%">
+									</section>
+									<section class="datos"><p class="tam_tit">{{index.7.Titulo}}</p></section>
+								</section>	
+								<section class="section_index_bajo">
+									<section class="imagen_index_bajo">
+										<img src="{{index.8.Imagen}}" width="100%" height="100%">
+									</section>
+									<section class="datos"><p class="tam_tit">{{index.8.Titulo}}</p></section>
+								</section>
+							</section>
+					</section>
+					<section id="acustic" class="tab-pane fade ">
+							<section>
+								<section class="section_index_bajo">
+									<section class="imagen_index_bajo">
+										<img src="{{index.5.Imagen}}" width="100%" height="100%">
+									</section>
+									<section class="datos"><p class="tam_tit">{{index.5.Titulo}}</p></section>
+							</section>
+
+								<section class="section_index_bajo">
+									<section class="imagen_index_bajo">
+										<img src="{{index.1.Imagen}}" width="100%" height="100%">
+									</section>
+									<section class="datos"><p class="tam_tit">{{index.1.Titulo}}</p></section>
+								</section>
+									
+								<section class="section_index_bajo">
+									<section class="imagen_index_bajo">
+										<img src="{{index.7.Imagen}}" width="100%" height="100%">
+									</section>
+									<section class="datos"><p class="tam_tit">{{index.7.Titulo}}</p></section>
+								</section>
+							
+							</section>
+				</section>
+					<p style="color:white;">{{index}}</p>
+      <div id="pop-up">
+        <table class="table">
+             <tr><td>Titulo: {{index.4.Titulo}}</td></tr>
+        </table>
+      </div>
+{%endblock%}

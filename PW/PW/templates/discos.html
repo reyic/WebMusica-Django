@@ -1,0 +1,112 @@
+{%extends "base.html"%}
+{%block content%}
+
+{% load staticfiles %}
+
+<section class="nav1 cat" >
+	<ul>
+				<li><a> Secciones </a></li>
+				<li><a href="{% url 'section' %}?g=Rock">Rock</a></li>
+				<li><a href="{% url 'section' %}?g=Punk">Punk</a></li>
+				<li><a href="{% url 'section' %}?g=Metal">Metal</a></li>
+				<li><a href="{% url 'section' %}?g=Acustic">Acustic</a></li>
+			</ul>
+</section>
+
+<section class="margen3">
+	<section class="nav2 nav1" >
+		<section class="logo_rock"> <img src="{% static 'img/icono.jpg' %}" width="110px" height="125px"> </section>
+		<section class="tit_rock">
+			<p class="efect">Section{{disc.0.Genero}}</p>
+		</section>
+		<section class="logo_rock_der logo_rock"> <img src="{% static 'img/icono.jpg' %}" width="110px" height="125px"> </section>
+	</section>
+</section>
+
+	<article class="lateral" style="float:right;margin-right:0.5%;">
+		<section class="art1_1_index">
+				<p>Más vendidos</p>
+			</section>
+	{% for x in listadisc %}
+		<section class="art1_2_index">
+		<a href="{% url 'discos'%}?d={{x.Titulo}}">	<section class="log_disc"><img src="{{x.Imagen}}" width="110px" height="120px">
+		</section></a>
+			<section class="art1_3 tam_tit arreglo grande">	{{x.Autor}}
+				<br>
+				<br>
+				{{x.Titulo}}
+			</section>
+		</section>
+	{%endfor%}
+	</article>
+
+
+<section class="disc_tit">
+	<p class="disc" style="font-size:50px;"> {{disc.0.Titulo}} </p> 
+</section>
+
+
+<section class="contenido">
+	<section class="centro_1"> <p class="efects">{{disc.0.Autor}}</p></section>
+	<section class="lista" style="float:right;"> 
+			<table border="2" class="tabledis">
+	    
+	    	<tr>
+	            <td id="colum2">
+	       			<audio controls src="{{disc.0.Cancion1}}" preload='none' type="audio/mpeg">
+       				</audio>
+
+					<audio controls src="{{disc.0.Cancion2}}" preload='none' type="audio/mpeg">
+					</audio>
+					<audio controls src="{{disc.0.Cancion3}}" preload='none' type="audio/mpeg">
+					</audio>
+					<audio controls src="{{disc.0.Cancion4}}" preload='none' type="audio/mpeg">
+					</audio>
+					<audio controls src="{{disc.0.Cancion5}}" preload='none' type="audio/mpeg">
+					</audio>
+					<audio controls src="{{disc.0.Cancion6}}" preload='none' type="audio/mpeg">
+					</audio>
+					<audio controls src="{{disc.0.Cancion7}}" preload='none' type="audio/mpeg">
+					</audio>
+					<audio controls preload='none' src="{{disc.0.Cancion8}}" type="audio/mpeg">
+					</audio>
+					<audio controls preload='none' src="{{disc.0.Cancion9}}" type="audio/mpeg">
+					</audio>
+					<audio controls src="{{disc.0.Cancion10}}" preload='none' type="audio/mpeg">
+					</audio>
+	            </td>
+	        </tr>
+	       
+	       
+	    </table>
+
+	</section>
+	<section class="" style="margin-top:50px;"> <img style="width:350px ;height:300px;margin-left: 20px; " src="{{disc.0.Imagen}}"> 
+	</section>
+	<section class="img_1" id="color"> 
+		<p class="infodisc"> Genero:{{disc.0.Genero}} </p>
+		<p class="infodisc"> Precio: {{disc.0.Precio}}</p>
+		<p class="infodisc"> Producido: Reyic's Music </p>
+	
+	<section style="margin-top:20px;">
+		<a href="{% url 'comenta' %}?comentario={{disc.0.Titulo}}">
+			<input class="submit-button" type="submit" value="Comenta" style="height: 50px; width: 360px;margin-left: 15px" />
+		</a>
+	</section>
+
+	<section class="comentarios_disco">
+		<section style="background-color: white;">			
+			{%for c in comentario%}
+				<p class="tam_tit" style="font-size:15px;">
+					||User: {{c.User}}||{{c.Fecha}}
+					<p class="tam_tit" style="background-color:white;margin-left:15px;">{{c.Comentario}}</p>
+				</p>
+			{%endfor%}
+		</section>			
+	</section>
+
+	</section>
+</section>
+
+
+{%endblock%}

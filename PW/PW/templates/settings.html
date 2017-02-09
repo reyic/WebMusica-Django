@@ -1,0 +1,41 @@
+{%extends "base.html"%}
+{%block content%}
+
+{% load staticfiles %}
+	
+
+	<section>
+		<nav>
+
+		</nav>
+	</section>
+
+	<section class="formato">
+		<form id="" class="form-container" role=form action="{% url 'settings'%}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+			
+			<section>{{disc_form.Genero}}</section>
+			<section>{{disc_form.Titulo}}</section>
+			<section>{{disc_form.Autor}}</section>
+			<section>{{disc_form.Precio}}</section>
+			<section class="efects" style="font-size:15px;margin-left:150px">Portada: {{disc_form.imagen}}</section>
+			<section class="efects" style="font-size:15px;margin-left:150px">Cancion 1: {{disc_form.cancion0}}</section>
+			<section class="efects" style="font-size:15px;margin-left:150px">Cancion 2: {{disc_form.cancion1}}</section>
+			<section class="efects" style="font-size:15px;margin-left:150px">Cancion 3: {{disc_form.cancion2}}</section>
+			<section class="efects" style="font-size:15px;margin-left:150px">Cancion 4: {{disc_form.cancion3}}</section>
+			<section class="efects" style="font-size:15px;margin-left:150px">Cancion 5: {{disc_form.cancion4}}</section>
+			<section class="efects" style="font-size:15px;margin-left:150px">Cancion 6: {{disc_form.cancion5}}</section>
+			<section class="efects" style="font-size:15px;margin-left:150px">Cancion 7: {{disc_form.cancion6}}</section>
+			<section class="efects" style="font-size:15px;margin-left:150px">Cancion 8: {{disc_form.cancion7}}</section>
+			<section class="efects" style="font-size:15px;margin-left:150px">Cancion 9: {{disc_form.cancion8}}</section>
+			<section class="efects" style="font-size:15px;margin-left:150px">Cancion 10: {{disc_form.cancion9}}</section>
+			
+			<section class="submit-container">
+				<input class="submit-button" type="submit" value="Enter" />
+			</section>
+
+		</form>
+	</section>
+	
+
+
+{%endblock%}
